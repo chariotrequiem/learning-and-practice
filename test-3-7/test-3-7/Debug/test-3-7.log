@@ -1,0 +1,4 @@
+﻿  lrd-1.c
+c:\users\az\desktop\code\test-3-7\test-3-7\lrd-1.c(14): warning C4013: “strcpy”未定义；假设外部返回 int
+  test-3-7.vcxproj -> C:\Users\AZ\Desktop\code\test-3-7\Debug\test-3-7.exe
+  test-3-7.vcxproj -> C:\Users\AZ\Desktop\code\test-3-7\Debug\test-3-7.pdb (Partial PDB)
