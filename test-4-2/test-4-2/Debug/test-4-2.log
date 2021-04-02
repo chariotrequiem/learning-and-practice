@@ -1,0 +1,4 @@
+﻿  lrd.c
+c:\users\az\desktop\code\learning-and-practice\test-4-2\test-4-2\lrd.c(143): warning C4101: “arr”: 未引用的局部变量
+  test-4-2.vcxproj -> C:\Users\AZ\Desktop\code\learning-and-practice\test-4-2\Debug\test-4-2.exe
+  test-4-2.vcxproj -> C:\Users\AZ\Desktop\code\learning-and-practice\test-4-2\Debug\test-4-2.pdb (Partial PDB)
