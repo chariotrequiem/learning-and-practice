@@ -9,43 +9,43 @@
 //第四个元素：函数指针，比较两个元素的所用函数的地址 - 这个函数使用者自己实现
 //            函数指针的两个参数是：待比较的两个元素的地址
 //交换函数
-//void swap(char* buf1, char* buf2, int width)
-//{
-//	int i = 0;
-//	for (i = 0; i < width; i++)
-//	{
-//		char tmp = *buf1;
-//		*buf1 = *buf2;
-//		*buf2 = tmp;
-//		buf1++;
-//		buf2++;
-//	}
-//}
+void swap(char* buf1, char* buf2, int width)
+{
+	int i = 0;
+	for (i = 0; i < width; i++)
+	{
+		char tmp = *buf1;
+		*buf1 = *buf2;
+		*buf2 = tmp;
+		buf1++;
+		buf2++;
+	}
+}
 ////仿造qsort函数编写冒泡排序函数
-//void bubble_sort(void* base, int sz, int width, int(*cmp)(void *e1, void *e2))
-//{
-//	int i = 0;
-//	//趟数
-//	for (i = 0; i < sz - 1; i++)
-//	{
-//		//每一趟比较的对数
-//		int j = 0;
-//		for (j = 0; j < sz - 1 - i; j++)
-//		{
-//			//两个元素的比较
-//			if (cmp((char*)base + j*width, (char*)base + (j + 1)*width) > 0)
-//			{
-//				//交换
-//				swap((char*)base + j*width, (char*)base + (j + 1)*width,width);
-//			}
-//		}
-//	}
-//}
-//struct stu 
-//{
-//	char name[20];
-//	int age;
-//};
+void bubble_sort(void* base, int sz, int width, int(*cmp)(void *e1, void *e2))
+{
+	int i = 0;
+	//趟数
+	for (i = 0; i < sz - 1; i++)
+	{
+		//每一趟比较的对数
+		int j = 0;
+		for (j = 0; j < sz - 1 - i; j++)
+		{
+			//两个元素的比较
+			if (cmp((char*)base + j*width, (char*)base + (j + 1)*width) > 0)
+			{
+				//交换
+				swap((char*)base + j*width, (char*)base + (j + 1)*width,width);
+			}
+		}
+	}
+}
+struct stu 
+{
+	char name[20];
+	int age;
+};
 //int cmp_stu_age(const void* e1, const void* e2)
 //{
 //	return ((struct stu*)e1)->age - ((struct stu*)e2)->age;
@@ -54,12 +54,12 @@
 //{
 //	return *(int*)e1 - *(int*)e2;
 //}
-//int cmp_stu_name(const void * e1, const void * e2)
-//{
-//	//比较名字就是比较字符串
-//	//字符串比较不能直接用<>=来比较，应该用strcmp函数
-//	return strcmp(((struct stu*)e1)->name, ((struct stu*)e2)->name);
-//}
+int cmp_stu_name(const void * e1, const void * e2)
+{
+	//比较名字就是比较字符串
+	//字符串比较不能直接用<>=来比较，应该用strcmp函数
+	return strcmp(((struct stu*)e1)->name, ((struct stu*)e2)->name);
+}
 //void test()
 //{
 //	int arr[] = { 9,8,7,6,5,4,3,2,1,0 };
@@ -72,20 +72,20 @@
 //	int sz = sizeof(s) / sizeof(s[0]);
 //	bubble_sort(s, sz, sizeof(s[0]),cmp_stu_age );
 //}
-//void test2()
-//{
-//	struct stu s[3] = { { "zhangsan", 20 },{ "lisi", 10 },{ "wangwu", 50 } };
-//	int sz = sizeof(s) / sizeof(s[0]);
-//	bubble_sort(s, sz, sizeof(s[0]), cmp_stu_name);
-//}
+void test2()
+{
+	struct stu s[3] = { { "zhangsan", 20 },{ "lisi", 10 },{ "wangwu", 50 } };
+	int sz = sizeof(s) / sizeof(s[0]);
+	bubble_sort(s, sz, sizeof(s[0]), cmp_stu_name);
+}
 ////主函数
-//int main()
-//{
-//	//test();
-//	//test1();
-//	test2();
-//	return 0;
-//}
+int main()
+{
+	//test();
+	//test1();
+	test2();
+	return 0;
+}
 //int main()
 //{
 //	一维数组
