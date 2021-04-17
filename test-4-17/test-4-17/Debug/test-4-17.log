@@ -1,0 +1,6 @@
+﻿  test.c
+c:\users\az\desktop\code\learning-and-practice\test-4-17\test-4-17\test.c(58): error C2143: 语法错误: 缺少“)”(在“*”的前面)
+c:\users\az\desktop\code\learning-and-practice\test-4-17\test-4-17\test.c(58): error C2081: “_TCHAR”: 形参表中的名称非法
+c:\users\az\desktop\code\learning-and-practice\test-4-17\test-4-17\test.c(58): error C2143: 语法错误: 缺少“{”(在“*”的前面)
+c:\users\az\desktop\code\learning-and-practice\test-4-17\test-4-17\test.c(58): error C2059: 语法错误:“)”
+c:\users\az\desktop\code\learning-and-practice\test-4-17\test-4-17\test.c(59): error C2054: 在“argv”之后应输入“(”
