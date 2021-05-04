@@ -1,0 +1,2 @@
+﻿  约瑟夫.cpp
+c:\users\az\desktop\code\learning-and-practice\test_5_4\test_5_4\约瑟夫.cpp(60): error C4703: 使用了可能未初始化的本地指针变量“tempNode”
