@@ -2,6 +2,12 @@
 #include<fstream>
 #include"identity.h"
 #include"globalFile.h"
+#include<vector>
+#include<map>
+#include"student.h"
+#include"teacher.h"
+#include<algorithm>
+#include"computerroom.h"
 
 
 class Manager :public Identity
@@ -27,5 +33,22 @@ public:
 
 	//清空预约
 	void ClearFile();
-	
+
+	//初始化容器
+	void initVector();
+
+	//学生容器
+	vector<Student>vStu;
+
+	//教师容器
+	vector<Teacher>vTea;
+
+	//初始化机房容器
+	void initVC();
+
+	//检测重复  参数1  检测学号/职工号  参数2  检测类型
+	bool checkRepeat(int id, int type);
+
+	//机房信息容器
+	vector<ComputerRoom>vc;
 };

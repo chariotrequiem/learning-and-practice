@@ -1,6 +1,10 @@
 #pragma once
 #include"identity.h"
-
+#include"computerroom.h"
+#include<vector>
+#include"globalFile.h"
+#include<fstream>
+#include"OrderFIle.h"
 
 class Student :public Identity
 {
@@ -26,9 +30,13 @@ public:
 	//取消预约
 	void CancelOrder();
 
-	//注销登录
-	void Exit();
 	//学生学号
 	int m_Id;
+
+	//机房容器
+	vector<ComputerRoom>vc;
+
+	//初始化机房容器
+	void initVC();
 
 };

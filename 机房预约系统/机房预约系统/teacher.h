@@ -1,6 +1,8 @@
 #pragma once
 #include"identity.h"
-
+#include<fstream>
+#include"OrderFIle.h"
+#include<vector>
 
 class Teacher :public Identity
 {

@@ -29,15 +29,15 @@ void managerMenu(Identity * &manager)//用父类指针接受
 			man->AddAccount();
 			break;
 		case 2://查看账号 
-			cout << "查看账号 " << endl;
+			//cout << "查看账号 " << endl;
 			man->ShowAccount();
 			break;
 		case 3://查看机房
-			cout << "查看机房" << endl;
+			//cout << "查看机房" << endl;
 			man->ShowComputer();
 			break;
 		case 4://清空预约
-			cout << "清空预约" << endl;
+			//cout << "清空预约" << endl;
 			man->ClearFile();
 			break;
 		case 0://注销登录
@@ -55,6 +55,95 @@ void managerMenu(Identity * &manager)//用父类指针接受
 		}
 	}
 }
+
+
+//进入学生子菜单
+void studentMenu(Identity * &student)
+{
+	while (true)
+	{
+		//调用学生菜单
+		student->operMenu();
+		//将父类指针强转换为子类指针，调用子类里其他接口
+		Student* stu = (Student*)student;
+
+		int select = 0;
+		cin >> select;
+
+		switch (select)
+		{
+		case 1://申请预约
+			//cout << "申请预约" << endl;
+			stu->ApplyOrder();
+			break;
+		case 2://查看预约 
+			//cout << "查看预约 " << endl;
+			stu->ShowMyOrder();
+			break;
+		case 3://查看所有预约
+			//cout << "查看所有预约" << endl;
+			stu->ShowAllOrder();
+			break;
+		case 4://取消预约
+			//cout << "取消预约" << endl;
+			stu->CancelOrder();
+			break;
+		case 0://注销登录
+			delete student;//销毁堆区对象
+			cout << "注销成功" << endl;
+			system("pause");
+			system("cls");
+			return;
+			break;
+		default:
+			cout << "输入有误，请重新选择! " << endl;
+			system("pause");
+			system("cls");
+			break;
+		}
+	}
+}
+
+
+//进入老师子菜单
+void teacherMenu(Identity * &teacher)
+{
+	while (true)
+	{
+		//调用管理员菜单
+		teacher->operMenu();
+		//将父类指针强转换为子类指针，调用子类里其他接口
+		Teacher* tea = (Teacher*)teacher;
+
+		int select = 0;
+		cin >> select;
+
+		switch (select)
+		{
+		case 1://查看所有预约
+			//cout << "查看所有预约" << endl;
+			tea->ShowAllOrder();
+			break;
+		case 2://审核预约
+			//cout << "审核预约 " << endl;
+			tea->ValidOrder();
+			break;
+		case 0://注销登录
+			delete teacher;//销毁堆区对象
+			cout << "注销成功" << endl;
+			system("pause");
+			system("cls");
+			return;
+			break;
+		default:
+			cout << "输入有误，请重新选择! " << endl;
+			system("pause");
+			system("cls");
+			break;
+		}
+	}
+}
+
 
 //登录功能   参数1  操作文件名称  参数2  操作身份类型
 void LoginIn(string fileName, int type)
@@ -106,6 +195,7 @@ void LoginIn(string fileName, int type)
 				system("cls");
 				person = new Student(id, name, pwd);
 				//进入学生身份子菜单
+				studentMenu(person);
 				return;
 			}
 		}	
@@ -125,7 +215,7 @@ void LoginIn(string fileName, int type)
 				system("cls");
 				person = new Teacher(id, name, pwd);
 				//进入教师身份子菜单
-
+				teacherMenu(person);
 				return;
 			}
 		}

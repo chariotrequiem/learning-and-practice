@@ -1,5 +1,4 @@
-﻿  机房预约系统.cpp
-  manager.cpp
-  正在生成代码...
+﻿  teacher.cpp
+c:\users\az\desktop\code\learning-and-practice\机房预约系统\机房预约系统\teacher.cpp(118): warning C4018: “<=”: 有符号/无符号不匹配
   机房预约系统.vcxproj -> C:\Users\AZ\Desktop\code\learning-and-practice\机房预约系统\Debug\机房预约系统.exe
   机房预约系统.vcxproj -> C:\Users\AZ\Desktop\code\learning-and-practice\机房预约系统\Debug\机房预约系统.pdb (Partial PDB)
