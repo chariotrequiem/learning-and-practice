@@ -1,0 +1,6 @@
+﻿  test.cpp
+c:\users\az\desktop\code\learning-and-practice\test_5_17\test_5_17\test.cpp(19): error C2440: “初始化”: 无法从“char”转换为“std::basic_string<char,std::char_traits<char>,std::allocator<char>>”
+  c:\users\az\desktop\code\learning-and-practice\test_5_17\test_5_17\test.cpp(19): note: 无构造函数可以接受源类型，或构造函数重载决策不明确
+c:\users\az\desktop\code\learning-and-practice\test_5_17\test_5_17\test.cpp(21): error C2374: “s4”: 重定义；多次初始化
+  c:\users\az\desktop\code\learning-and-practice\test_5_17\test_5_17\test.cpp(17): note: 参见“s4”的声明
+c:\users\az\desktop\code\learning-and-practice\test_5_17\test_5_17\test.cpp(22): error C2088: “<<”: 对于 class 非法
